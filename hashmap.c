@@ -72,7 +72,24 @@ void insertMap(HashMap * map, char * key, void * value) {
 }
 
 void enlarge(HashMap * map) {
- enlarge_called = 1; //no borrar (testing purposes)
+  //Esta función agranda la capacidad del arreglo buckets y reubica todos sus elementos.
+  Pair**aux=map->buckets;
+  int antiguo=map->capacity;
+  map->capacity*=2;
+
+  map->buckets=(Pair**)malloc(sizeof(Pair*)*map->capacity);
+  if (map->buckets==NULL){
+    exit(EXIT_FAILURE);
+  }
+
+  map->size = 0;
+
+  for (int i =0; <antiguo; i++){
+    if (aux[i]!=NULL && aux[i]->key !=NULL){
+      insertMap(map, aux[i]->key, aux[i]->value);
+    }
+  }
+  free(aux)
 
 
 }
