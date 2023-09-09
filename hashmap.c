@@ -52,13 +52,13 @@ void enlarge(HashMap * map) {
 
 
 HashMap * createMap(long capacity) {
-  HashMap *map =(HashMap*)malloc(sizeof(HashMap));
-  if (map==NULL){
+  HashMap *map =(HashMap*)malloc(sizeof(HashMap));//para que sea dinamica
+  if (map==NULL){//si esta vacio no se puede
     printf("Error al asignar memoria.");
     exit(EXIT_FAILURE);
   }
-
-  for(int i =0; i<capacity; i++){
+  
+  for(int i =0; i<capacity; i++){//crea el mapa del porte de capacidad
     map->buckets[i]=NULL;
     
   }
