@@ -1,0 +1,11 @@
+Sat 09 Sep 2023 02:12:48 AM UTC: 
+ hashmap.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘createMap’:
+hashmap.c:62:8: error: ‘*map.buckets’ may be used uninitialized [-Werror=maybe-uninitialized]
+   62 |     map->buckets[i]=NULL;
+      |     ~~~^~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+0716d11
