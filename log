@@ -62,3 +62,9 @@ hashmap.c:52:16: error: ‘keys’ undeclared (first use in this function); did 
 hashmap.c:52:16: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 9d628f5
+Sat 09 Sep 2023 07:08:32 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  1|5
+total_score: 10/70
+650faff
