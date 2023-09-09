@@ -38,6 +38,13 @@ int is_equal(void* key1, void* key2){
     return 0;
 }
 
+int resolverCollision(HashMap*map, int position){
+  int a=position;
+  while(map->buckets[position]!=NULL && map->buckets[position]->key!=NULL){
+    a = (a+1)%map->capacity;
+  }
+  return a;
+}
 
 void insertMap(HashMap * map, char * key, void * value) {
   int position  = hash(key, map->capacity);
@@ -50,6 +57,13 @@ void insertMap(HashMap * map, char * key, void * value) {
     
     nuevo->value=value;
     nuevo->key=strdup(key);
+    map->buckets[position]=nuevo;
+    map->size++;
+  }else{
+    int newPosition =resolverCollision(map, position);
+    Pair*nuevo=malloc(sizeof(Pair));
+    nuevo->value=value;
+    nuevo->key=key;
     map->buckets[position]=nuevo;
     map->size++;
   }  

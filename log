@@ -80,3 +80,14 @@ Sat 09 Sep 2023 07:11:40 PM UTC:
  tests:  2|5
 total_score: 20/70
 e81ce9b
+Sat 09 Sep 2023 07:23:55 PM UTC: 
+ hashmap.c | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:63:9: error: unused variable ‘newPosition’ [-Werror=unused-variable]
+   63 |     int newPosition =resolverCollision(map, position);
+      |         ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+23f2952
