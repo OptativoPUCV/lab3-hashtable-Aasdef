@@ -117,9 +117,8 @@ Pair * searchMap(HashMap * map,  char * key) {
     if (position==map->current){
       break;
     }
-  return NULL;
-
   }
+  return NULL;
 }
 
 Pair * firstMap(HashMap * map) {
