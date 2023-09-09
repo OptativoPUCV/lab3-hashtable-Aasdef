@@ -72,7 +72,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 }
 
 void enlarge(HashMap * map) {
-    enlarge_called = 1; //no borrar (testing purposes)
+ enlarge_called = 1; //no borrar (testing purposes)
 
 
 }
@@ -106,9 +106,20 @@ void eraseMap(HashMap * map,  char * key) {
 }
 
 Pair * searchMap(HashMap * map,  char * key) {   
+  int position  = hash(key, map->capacity);
+  //Si la clave no se encuentra avance hasta encontrarla (método de resolución de colisiones)
+  while(map->buckets[position]!=NULL){
+    if (map->buckets[position]->key!=NULL &&strcmp(map->buckets[position]->key, key)){
+      map->current=position;
+      return map->buckets[position];
+    }
+    position= (position+1)%map->capacity;
+    if (position==map->current){
+      break;
+    }
+  return NULL;
 
-
-    return NULL;
+  }
 }
 
 Pair * firstMap(HashMap * map) {
