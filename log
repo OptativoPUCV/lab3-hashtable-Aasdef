@@ -169,3 +169,13 @@ hashmap.c:163:1: error: control reaches end of non-void function [-Werror=return
 cc1: all warnings being treated as errors
 Compilation failed
 8b9ddd3
+Sat 09 Sep 2023 09:01:25 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:155:106: error: invalid type argument of ‘->’ (have ‘long int’)
+  155 |   while (map->current <map->capacity && (map->buckets[map->current] ==NULL )|| map->buckets[map->current -> key ==NULL]){
+      |                                                                                                          ^~
+Compilation failed
+92a3985

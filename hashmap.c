@@ -150,7 +150,7 @@ Pair * firstMap(HashMap * map) {
 }
 
 Pair * nextMap(HashMap * map) {
-  map->current++:
+  map->current++;
   // Buscar el siguiente Pair válido y retornarlo
   while (map->current <map->capacity && (map->buckets[map->current] ==NULL )|| map->buckets[map->current -> key ==NULL]){
     map->current ++;
