@@ -179,3 +179,13 @@ hashmap.c:155:106: error: invalid type argument of ‘->’ (have ‘long int’
       |                                                                                                          ^~
 Compilation failed
 92a3985
+Sat 09 Sep 2023 09:04:47 PM UTC: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘nextMap’:
+hashmap.c:155:42: error: expected expression before ‘[’ token
+  155 |   while (map->current <map->capacity && ([map->buckets[map->current] ==NULL || map->buckets[map->current]->key ==NULL)){
+      |                                          ^
+Compilation failed
+d7a7b05
