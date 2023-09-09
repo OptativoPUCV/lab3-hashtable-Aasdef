@@ -40,7 +40,19 @@ int is_equal(void* key1, void* key2){
 
 
 void insertMap(HashMap * map, char * key, void * value) {
-
+  int position  = hash(key, map->capacity);
+    //verificar si la posicion es nula o es invalida
+  if (map->buckets[position]==NULL || map->buckets[position]->key == NULL){
+    Pair*nuevo=malloc(sizeof(Pair));
+    if (nuevo==NULL){
+      printf("error asignacion de memoria.");
+      exit(EXIT_FAILURE);
+    }
+    
+    nuevo->value=value;
+    nuevo->key=key;
+    map->buckets[position]=nuevo;
+  }  
 
 }
 
