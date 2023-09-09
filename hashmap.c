@@ -109,7 +109,7 @@ Pair * searchMap(HashMap * map,  char * key) {
   int position  = hash(key, map->capacity);
   //Si la clave no se encuentra avance hasta encontrarla (método de resolución de colisiones)
   while(map->buckets[position]!=NULL){
-    if (map->buckets[position]->key!=NULL &&strcmp(map->buckets[position]->key, key)){
+    if (map->buckets[position]->key!=NULL &&strcmp(map->buckets[position]->key, key)==0){
       map->current=position;
       return map->buckets[position];
     }
