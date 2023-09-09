@@ -68,7 +68,6 @@ HashMap * createMap(long capacity) {
     
   }
 
-  map->size=0;
   map->current=-1;
   return map;
 }
