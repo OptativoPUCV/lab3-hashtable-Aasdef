@@ -101,7 +101,19 @@ HashMap * createMap(long capacity) {
 }
 
 void eraseMap(HashMap * map,  char * key) {    
-
+// Para hacerlo debe buscar el dato y luego marcarlo para que no sea válido.
+  int position = hash(key, map->capacity);
+  while (map->buckets[position]!=NULL){
+    if (map->bucket[position]->key !=NULL && strcmp(map->buckets[position]->key, key)==0){
+      map->buckets[position]->key=NULL;
+      map->size--;
+      return;
+    }
+    position= (position+1)%map->capacity;
+    if (position==map->current){
+      break;  
+    }
+  }
 
 }
 

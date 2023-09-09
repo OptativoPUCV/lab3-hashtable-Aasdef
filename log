@@ -120,3 +120,14 @@ Sat 09 Sep 2023 08:32:17 PM UTC:
  tests:  8|3
 total_score: 40/70
 5224821
+Sat 09 Sep 2023 08:43:49 PM UTC: 
+ hashmap.c | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:107:14: error: ‘HashMap’ {aka ‘struct HashMap’} has no member named ‘bucket’; did you mean ‘buckets’?
+  107 |     if (map->bucket[position]->key !=NULL && strcmp(map->buckets[position]->key, key)==0){
+      |              ^~~~~~
+      |              buckets
+Compilation failed
+6659020
