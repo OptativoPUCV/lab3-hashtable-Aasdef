@@ -134,8 +134,19 @@ Pair * searchMap(HashMap * map,  char * key) {
 }
 
 Pair * firstMap(HashMap * map) {
-
+  //retorna el primer Pair válido del arreglo buckets.
+  map->current=0;
+  // Buscar el primer Pair válido y retornarlo
+  while (map->current < map->capacity && (map->buckets[map->current] == NULL || map->buckets[map->current]->key == NULL)){
+  map->current++;
+  }
+  if (map->curret < map->capacity){
+    return map->buckets[map->current];
+  }else{
     return NULL;
+  }
+    
+  return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
