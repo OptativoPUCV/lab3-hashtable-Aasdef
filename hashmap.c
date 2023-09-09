@@ -45,12 +45,11 @@ void insertMap(HashMap * map, char * key, void * value) {
   if (map->buckets[position]==NULL || map->buckets[position]->key == NULL){
     Pair*nuevo=malloc(sizeof(Pair));
     if (nuevo==NULL){
-      printf("error asignacion de memoria.");
       exit(EXIT_FAILURE);
     }
     
     nuevo->value=value;
-    nuevo->key=key;
+    nuevo->key=keys;
     map->buckets[position]=nuevo;
   }  
 

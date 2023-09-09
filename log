@@ -50,3 +50,15 @@ Sat 09 Sep 2023 07:04:51 PM UTC:
  tests:  1|5
 total_score: 10/70
 6412a1a
+Sat 09 Sep 2023 07:07:51 PM UTC: 
+ hashmap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:52:16: error: ‘keys’ undeclared (first use in this function); did you mean ‘key’?
+   52 |     nuevo->key=keys;
+      |                ^~~~
+      |                key
+hashmap.c:52:16: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+9d628f5
