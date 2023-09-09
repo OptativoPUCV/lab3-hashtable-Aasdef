@@ -49,7 +49,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
     
     nuevo->value=value;
-    nuevo->key=key;
+    nuevo->key=strdup(key);
     map->buckets[position]=nuevo;
     map->size++;
   }  
