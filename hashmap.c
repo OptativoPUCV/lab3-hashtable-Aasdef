@@ -57,6 +57,8 @@ HashMap * createMap(long capacity) {
     printf("Error al asignar memoria.");
     exit(EXIT_FAILURE);
   }
+
+  map->buckets = (Pair**)malloc(sizeof(Pair*)* capacity);
   
   for(int i =0; i<capacity; i++){//crea el mapa del porte de capacidad
     map->buckets[i]=NULL;
